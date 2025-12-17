@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { languages } from '../../i18n/ui';
+import { useTranslations, getRelativeLocaleUrl } from '../../i18n/utils';
+import { Wifi, Tv, Coffee, Car, Wind, Utensils, Clock, Key, Dog, CheckCircle } from 'lucide-react';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as keyof typeof languages);
+
+const content = {
+  nl: {
+    title: "Uw Verblijf",
+    intro: "Een oase van rust en privacy. Ons vrijstaande verblijf is van alle gemakken voorzien voor een ontspannen vakantie of weekendje weg.",
+    facilitiesTitle: "Faciliteiten",
+    facilities: [
+      { icon: Wifi, text: "Gratis WiFi" },
+      { icon: Car, text: "Privé Parkeren" },
+      { icon: Tv, text: "Flatscreen TV" },
+      { icon: Coffee, text: "Koffie & Thee" },
+      { icon: Utensils, text: "Kitchenette & Magnetron" },
+      { icon: Wind, text: "Airconditioning" },
+    ],
+    detailsTitle: "Indeling",
+    details: [
+        "Ruime slaapkamer met boxspring (180x200)",
+        "Woonkamer met comfortabele slaapbank",
+        "Eigen badkamer met inloopdouche",
+        "Privé terras met uitzicht",
+        "Eigen ingang voor optimale privacy"
+    ],
+    pricingTitle: "Tarieven",
+    pricingText: "Prijzen variëren per seizoen en verblijfsduur. Neem contact op voor een actueel aanbod.",
+    cta: "Direct Reserveren",
+    galleryTitle: "Sfeerimpressie",
+    practicalTitle: "Praktisch & Handig",
+    facilitiesIntro: "Alles voor een perfect verblijf",
+    practical: [
+        { icon: Key, label: "Inchecken", value: "Vanaf 15:00 uur" },
+        { icon: Clock, label: "Uitchecken", value: "Tot 11:00 uur" },
+        { icon: Coffee, label: "Ontbijt", value: "Vers in de mand (optioneel)" },
+        { icon: Dog, label: "Huisdieren", value: "Niet toegestaan" }
+    ]
+  },
+  en: {
+    title: "Your Stay",
+    intro: "An oasis of peace and privacy. Our detached accommodation is fully equipped for a relaxing holiday or weekend getaway.",
+    facilitiesTitle: "Facilities",
+    facilities: [
+      { icon: Wifi, text: "Free WiFi" },
+      { icon: Car, text: "Private Parking" },
+      { icon: Tv, text: "Flatscreen TV" },
+      { icon: Coffee, text: "Coffee & Tea" },
+      { icon: Utensils, text: "Kitchenette & Microwave" },
+      { icon: Wind, text: "Air Conditioning" },
+    ],
+    detailsTitle: "Layout",
+    details: [
+        "Spacious bedroom with boxspring (180x200)",
+        "Living room with comfortable sofa bed",
+        "Private bathroom with walk-in shower",
+        "Private terrace with view",
+        "Private entrance for optimal privacy"
+    ],
+    pricingTitle: "Rates",
+    pricingText: "Prices vary by season and length of stay. Contact us for current offers.",
+    cta: "Book Now",
+    galleryTitle: "Impressions",
+    practicalTitle: "Good to Know",
+    facilitiesIntro: "Everything for a perfect stay",
+    practical: [
+        { icon: Key, label: "Check-in", value: "From 15:00" },
+        { icon: Clock, label: "Check-out", value: "Until 11:00" },
+        { icon: Coffee, label: "Breakfast", value: "Fresh basket (optional)" },
+        { icon: Dog, label: "Pets", value: "Not allowed" }
+    ]
+  },
+  de: {
+    title: "Ihr Aufenthalt",
+    intro: "Eine Oase der Ruhe und Privatsphäre. Unsere freistehende Unterkunft ist komplett ausgestattet für einen entspannten Urlaub.",
+    facilitiesTitle: "Ausstattung",
+    facilities: [
+      { icon: Wifi, text: "Gratis WiFi" },
+      { icon: Car, text: "Privatparkplatz" },
+      { icon: Tv, text: "Flachbildfernseher" },
+      { icon: Coffee, text: "Kaffee & Tee" },
+      { icon: Utensils, text: "Kochnische & Mikrowelle" },
+      { icon: Wind, text: "Klimaanlage" },
+    ],
+    detailsTitle: "Einteilung",
+    details: [
+        "Geräumiges Schlafzimmer mit Boxspring (180x200)",
+        "Wohnzimmer mit bequemem Schlafsofa",
+        "Eigenes Badezimmer mit ebenerdiger Dusche",
+        "Private Terrasse mit Aussicht",
+        "Privater Eingang für optimale Privatsphäre"
+    ],
+    pricingTitle: "Preise",
+    pricingText: "Die Preise variieren je nach Saison und Aufenthaltsdauer. Kontaktieren Sie uns für ein Angebot.",
+    cta: "Jetzt Buchen",
+    galleryTitle: "Impressionen",
+    practicalTitle: "Gut zu wissen",
+    facilitiesIntro: "Alles für einen perfekten Aufenthalt",
+    practical: [
+        { icon: Key, label: "Check-in", value: "Ab 15:00 Uhr" },
+        { icon: Clock, label: "Check-out", value: "Bis 11:00 Uhr" },
+        { icon: Coffee, label: "Frühstück", value: "Frisch im Korb (optional)" },
+        { icon: Dog, label: "Haustiere", value: "Nicht erlaubt" }
+    ]
+  }
+};
+
+const c = content[lang as keyof typeof content];
+
+import roomImage from '../../assets/images/t_stippie_02.jpg'; // Main Feature (User requested 02)
+import galleryImg1 from '../../assets/images/t_stippie_03.jpg'; // Gallery 1 (User requested 03)
+import galleryImg2 from '../../assets/images/t_stippie_06.jpg'; // Gallery 2 (User requested 06)
+import galleryImg3 from '../../assets/images/t_stippie_12.jpg'; // Gallery 3 (User requested 12)
+import { Image } from 'astro:assets';
+---
+
+<Layout title={`B&B 't Stippie | ${c.title}`}>
+  <div class="pt-24 md:pt-36 pb-12 bg-brand-light">
+    <div class="container mx-auto px-6">
+      <!-- New Premium Layout -->
+      
+      <!-- Intro Section -->
+      <div class="text-center max-w-4xl mx-auto mb-20">
+          <h1 class="text-5xl md:text-7xl font-heading font-black text-brand-green mb-8 animate-slide-up">{c.title}</h1>
+          <p class="text-xl text-brand-dark/70 leading-relaxed font-light animate-slide-up delay-100">{c.intro}</p>
+      </div>
+
+      <!-- Feature Highlight (Split Layout) -->
+      <div class="flex flex-col lg:flex-row gap-12 items-center mb-24">
+          <div class="w-full lg:w-1/2 relative group animate-slide-up delay-200">
+               <div class="absolute inset-0 bg-brand-clay/30 rounded-[40px] transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+               <div class="rounded-[40px] overflow-hidden shadow-2xl aspect-[4/3] relative isolate z-0">
+                    <Image src={roomImage} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Luxury Room" quality="high" />
+               </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-8 animate-slide-up delay-300">
+              <h2 class="text-3xl font-heading font-bold text-brand-green border-l-4 border-brand-clay pl-6">{c.facilitiesIntro}</h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {c.facilities.map(item => (
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-brand-clay/10 hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green">
+                                <item.icon className="w-5 h-5" />
+                            </div>
+                            <span class="font-medium text-brand-dark">{item.text}</span>
+                        </div>
+                    ))}
+              </div>
+          </div>
+      </div>
+
+      <!-- Details & Layout (Glass Card) -->
+      <div class="relative py-16 px-6 md:px-16 bg-brand-green rounded-3xl md:rounded-[50px] overflow-hidden text-white mb-24 animate-slide-up delay-400">
+           <!-- Decorative Background Pattern -->
+           <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+           <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-brand-clay/20 rounded-full blur-2xl"></div>
+
+           <div class="relative z-10 grid md:grid-cols-2 gap-12">
+               <div>
+                   <h3 class="text-3xl font-heading font-bold mb-6 text-white">{c.detailsTitle}</h3>
+                   <ul class="space-y-4">
+                        {c.details.map(item => (
+                            <li class="flex items-center gap-3 text-white/90 text-lg">
+                                <span class="w-2 h-2 rounded-full bg-brand-clay shadow-[0_0_10px_rgba(229,208,195,0.5)]"></span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+               </div>
+               <div class="flex flex-col justify-center items-start bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+                    <h3 class="text-2xl font-heading font-bold mb-4 text-brand-clay">{c.pricingTitle}</h3>
+                    <p class="text-white/80 mb-8 leading-relaxed">{c.pricingText}</p>
+                    <a href={getRelativeLocaleUrl(lang as string, 'boeken')} class="inline-flex items-center gap-2 bg-white text-brand-green font-bold px-8 py-3 rounded-full hover:bg-brand-clay hover:text-brand-dark transition-all shadow-lg text-lg">
+                        {c.cta}
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+               </div>
+           </div>
+      </div>
+
+      <!-- Photo Gallery Strip (Sfeerimpressie) -->
+      <div class="mb-24">
+         <h2 class="text-3xl md:text-4xl font-heading font-bold text-center text-brand-dark mb-12">{c.galleryTitle}</h2>
+         <div class="grid md:grid-cols-3 gap-6">
+             <div class="rounded-2xl overflow-hidden shadow-lg h-[300px] group">
+                <Image src={galleryImg1} alt="Sfeerimpressie 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" quality="mid" />
+             </div>
+             <div class="rounded-2xl overflow-hidden shadow-lg h-[300px] group md:-mt-8">
+                <Image src={galleryImg2} alt="Sfeerimpressie 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" quality="mid" />
+             </div>
+             <div class="rounded-2xl overflow-hidden shadow-lg h-[300px] group">
+                <Image src={galleryImg3} alt="Sfeerimpressie 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" quality="mid" />
+             </div>
+         </div>
+      </div>
+
+      <!-- Practical Info Grid -->
+      <div class="bg-white p-10 rounded-[40px] shadow-sm border border-brand-clay/20">
+         <h2 class="text-3xl font-heading font-bold text-brand-green mb-10 text-center">{c.practicalTitle}</h2>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {c.practical.map(item => (
+                <div class="text-center p-4">
+                    <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand-green mx-auto mb-4">
+                        <item.icon className="w-6 h-6" />
+                    </div>
+                    <h4 class="font-bold text-brand-dark mb-2">{item.label}</h4>
+                    <p class="text-brand-dark/70 text-sm">{item.value}</p>
+                </div>
+            ))}
+         </div>
+      </div>
+    </div>
+  </div>
+</Layout>

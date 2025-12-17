@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { languages } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/utils';
+import { MapPin, Phone, Mail, Send } from 'lucide-react';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as keyof typeof languages);
+
+const content = {
+  nl: {
+    title: "Contact & Reserveren",
+    subtitle: "Heeft u vragen of wilt u reserveren? Wij staan voor u klaar.",
+    form: { name: "Naam", email: "E-mail", message: "Bericht", send: "Versturen" },
+    contactInfo: { title: "Gegevens", address: "Tragel 1, 4576 EA Koewacht", phone: "+31 (0)114 123 456", email: "info@tstippie.nl" }
+  },
+  en: {
+    title: "Contact & Reservations",
+    subtitle: "Questions or want to make a booking? We are here to help.",
+    form: { name: "Name", email: "Email", message: "Message", send: "Send" },
+    contactInfo: { title: "Details", address: "Tragel 1, 4576 EA Koewacht", phone: "+31 (0)114 123 456", email: "info@tstippie.nl" }
+  },
+  de: {
+    title: "Kontakt & Reservieren",
+    subtitle: "Haben Sie Fragen oder möchten Sie reservieren? Wir helfen Ihnen gerne.",
+    form: { name: "Name", email: "E-Mail", message: "Nachricht", send: "Senden" },
+    contactInfo: { title: "Daten", address: "Tragel 1, 4576 EA Koewacht", phone: "+31 (0)114 123 456", email: "info@tstippie.nl" }
+  }
+};
+
+const c = content[lang as keyof typeof content];
+---
+
+<Layout title={`B&B 't Stippie | ${c.title}`}>
+  <div class="pt-24 md:pt-36 pb-12 bg-brand-light">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+          <h1 class="text-4xl md:text-5xl font-heading font-black text-brand-green mb-6 animate-slide-up">{c.title}</h1>
+          <p class="text-lg text-brand-dark/70 leading-relaxed animate-slide-up delay-100">{c.intro}</p>
+      </div>
+
+       <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Info & Map -->
+          <div class="space-y-8">
+             <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-clay/20">
+                <h3 class="text-2xl font-heading font-bold mb-6 text-brand-green">{c.contactInfo.title}</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-brand-dark/80">
+                        <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green">
+                            <MapPin className="w-5 h-5" />
+                        </div>
+                        <span>{c.contactInfo.address}</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-brand-dark/80">
+                         <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green">
+                            <Phone className="w-5 h-5" />
+                        </div>
+                        <span>{c.contactInfo.phone}</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-brand-dark/80">
+                         <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-green">
+                            <Mail className="w-5 h-5" />
+                        </div>
+                        <a href={`mailto:${c.contactInfo.email}`} class="hover:text-brand-green transition-colors">{c.contactInfo.email}</a>
+                    </div>
+                </div>
+             </div>
+
+             <div class="h-[300px] rounded-2xl overflow-hidden shadow-lg border border-white/20">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.456673759904!2d3.975431315750849!3d51.22234097958925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c38c62c7e0c8b3%3A0x400994f7966f9b88!2sTragel%201%2C%204576%20EA%20Koewacht2!5e0!3m2!1snl!2snl!4v1629898765432!5m2!1snl!2snl" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                ></iframe>
+             </div>
+          </div>
+
+          <!-- Form -->
+          <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-brand-clay/20 animate-slide-up delay-200 h-full">
+                <h3 class="text-2xl font-heading font-bold mb-6 text-brand-green">Stuur ons een bericht</h3>
+                <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+                    <div class="space-y-4">
+                        <input type="text" name="name" placeholder={t('form.name')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors" />
+                        <input type="email" name="email" placeholder={t('form.email')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors" />
+                        <textarea name="message" rows="5" placeholder={t('form.message')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-full shadow-lg hover:bg-brand-dark hover:scale-[1.02] active:scale-95 transition-all duration-300">
+                        {t('form.send')}
+                    </button>
+                </form>
+            </div>
+       </div>
+    </div>
+  </div>
+</Layout>

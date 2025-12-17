@@ -1,0 +1,51 @@
+---
+import Navigation from '../components/common/Navigation.astro';
+import { getLangFromUrl } from '../i18n/utils';
+import '../styles/global.css';
+
+import logo from '../assets/images/logo.png';
+import { Image } from 'astro:assets';
+
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description = "B&B 't Stippie - Rust en ruimte in de Zeeuwse polder." } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+        
+		<title>{title}</title>
+	</head>
+	<body class="bg-brand-light text-brand-dark antialiased overflow-x-hidden selection:bg-brand-green selection:text-white">
+        <Navigation />
+		<slot />
+        
+        <footer class="bg-brand-green text-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex justify-center mb-6">
+                    <Image src={logo} alt="B&B 't Stippie" class="h-20 w-auto object-contain brightness-0 invert opacity-90" quality="mid" />
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-white/70">
+                    <p>&copy; {new Date().getFullYear()} B&B 't Stippie. Tragel 1, 4576 EA Koewacht.</p>
+                    <span class="hidden md:inline">•</span>
+                    <p>Gemaakt door <a href="https://zee-zicht.nl" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:text-brand-clay transition-colors hover:underline">Zee-Zicht</a></p>
+                </div>
+            </div>
+        </footer>
+	</body>
+</html>
