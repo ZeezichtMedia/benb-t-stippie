@@ -17,22 +17,22 @@ const content = {
   de: { title: "Fotogalerie" }
 };
 
-// Import all images starting with 't_stippie_' from assets folder
-const imageFiles = import.meta.glob('../../assets/images/t_stippie_*.{jpeg,jpg,png,gif}', { eager: true });
+// Import all images from vdg folder
+const imageFiles = import.meta.glob('../../assets/images/vdg/*.{jpeg,jpg,png,gif,webp}', { eager: true });
 const images = Object.values(imageFiles).map((img: any) => img.default);
 
 const c = content[lang as keyof typeof content];
 ---
 
-<Layout title={`B&B 't Stippie | ${t('nav.gallery')}`}>
-  <div class="pt-24 md:pt-36 pb-12">
+<Layout title={`B&B Van de Gruiterwonen | ${t('nav.gallery')}`}>
+  <div class="pt-36 md:pt-36 pb-12">
     <div class="container mx-auto px-6">
-       <h1 class="text-4xl md:text-5xl font-heading font-bold text-center mb-12">{c.title}</h1>
+       <h1 class="text-4xl md:text-5xl font-heading font-bold text-center mb-12 text-brand-brown">{c.title}</h1>
 
        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {images.map((img, index) => (
              <div 
-                class="break-inside-avoid relative group overflow-hidden rounded-3xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up"
+                class="break-inside-avoid relative group overflow-hidden rounded-3xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up border border-brand-gold/10"
                 style={`animation-delay: ${index * 50}ms`}
                 onclick={`openLightbox('${img.src}')`}
              >
@@ -50,7 +50,7 @@ const c = content[lang as keyof typeof content];
 
   <!-- Simple Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center p-4">
-      <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white p-2 hover:text-brand-green transition-colors">
+      <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white p-2 hover:text-brand-gold transition-colors">
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
       <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" />

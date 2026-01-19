@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-    /* Colors */
-    --color-brand-green: #2C5530;
-    --color-brand-clay: #E5D0C3;
-    --color-brand-dark: #1F2937;
-    --color-brand-light: #F9F5F3;
+    /* Colors - Mediterranean Luxury */
+    --color-brand-cream: #FAF7F2;
+    --color-brand-taupe: #4A4238;
+    /* Primary Text */
+    --color-brand-brown: #3E362E;
+    /* Darker Text/Headings */
+    --color-brand-green: #3A4D39;
+    /* Accent - resemble flyer green chair/plant */
+    --color-brand-gold: #C5A065;
+    /* Accent - luxury touch */
+    --color-brand-light: #FDFBF7;
+    /* Slightly lighter bg */
 
     /* Fonts */
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
 }
 
 /* Custom Utilities or Resets */
@@ -17,7 +25,7 @@
 
 
     body {
-        @apply font-body text-brand-dark bg-brand-light antialiased;
+        @apply font-body text-brand-taupe bg-brand-cream antialiased;
     }
 
     h1,
@@ -26,7 +34,7 @@
     h4,
     h5,
     h6 {
-        @apply font-heading font-bold text-brand-green;
+        @apply font-heading font-bold text-brand-brown;
     }
 }
 

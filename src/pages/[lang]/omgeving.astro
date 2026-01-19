@@ -13,27 +13,17 @@ const t = useTranslations(lang as keyof typeof languages);
 
 const content = {
   nl: {
-    title: "Ontdek de Omgeving",
-    intro: "Koewacht ligt uniek op de grens van Nederland en België. Geniet van het beste van beide werelden: Zeeuwse rust en Vlaamse gezelligheid.",
+    title: "Ontdek Axel & Omgeving",
+    intro: "Van de Gruiterwonen ligt midden in het charmante centrum van Axel. Geniet van de Zeeuwse gastvrijheid, de vele restaurants en de prachtige natuur in de omgeving.",
     categories: [
         {
-            title: "Natuur & Wandelen",
-            icon: Leaf,
-            image: imgNature,
-            items: [
-                { name: "Clingse Bossen", desc: "Uitgestrekt natuurgebied met stuifduinen en waterpartijen, ideaal voor lange wandelingen (9km).", url: null },
-                { name: "Polders van Koewacht", desc: "Fiets direct vanuit de B&B langs de liniedijken en door het weidse landschap.", url: null },
-                { name: "Grote Geule", desc: "Natuurgebied ontstaan uit een kreekrestant, rijk aan watervogels.", url: null }
-            ]
-        },
-        {
-            title: "Cultuur & Steden",
+            title: "Cultuur & Historie",
             icon: Landmark,
             image: imgCulture,
             items: [
-                { name: "Verbeke Foundation", desc: "Indrukwekkende private kunstsite (12ha) met collages en assemblages in Kemzeke (6km). Een must-see!", url: "https://verbekefoundation.com/" },
-                { name: "Museum Het Warenhuis", desc: "Land van Axel, streekmuseum met unieke collectie (Axel).", url: "https://www.hetwarenhuis.nl/" },
-                { name: "Antwerpen & Gent", desc: "Wereldsteden op korte rijafstand. Perfect voor een dagje shoppen en cultuur snuiven.", url: null }
+                { name: "Museum Het Warenhuis", desc: "Laat u verrassen in dit unieke streekmuseum in hartje Axel, op loopafstand.", url: "https://www.hetwarenhuis.nl/" },
+                { name: "Watertoren van Axel", desc: "Een iconisch herkenningspunt en rijksmonument. Beklim de toren voor een prachtig uitzicht.", url: "https://www.watertorenaxel.nl/" },
+                { name: "Stadsmolen Axel", desc: "Historische korenmolen uit 1750, nog steeds in werking en te bezoeken.", url: "https://www.molendatabase.nl/nederland/molen.php?nummer=1152" }
             ]
         },
         {
@@ -41,36 +31,36 @@ const content = {
             icon: UtensilsCrossed,
             image: imgFood,
             items: [
-                { name: "'t Vlasbloemeken", desc: "Culinair genieten op sterrenniveau in Koewacht.", url: "https://www.vlasbloemeken.com/" },
-                { name: "Restaurant Bij van Dijk", desc: "Gezellig en goed tafelen aan de Eikenlaan.", url: "https://www.restaurant-bijvandijk.nl/" },
-                { name: "De Letter Asperges & Zo", desc: "Specialiteitenrestaurant en streekwinkel.", url: "https://www.aspergesenzo.nl/" }
+                { name: "Mia's Restaurant & Lounge", desc: "Mediterrane sfeer en heerlijke gerechten, perfect voor een gezellige avond.", url: "https://miasaxel.com/" },
+                { name: "Restaurant à Table", desc: "Verfijnd dineren in een sfeervolle setting met seizoensgebonden gerechten.", url: "https://www.restaurantatable.nl/" },
+                { name: "'t Vlasbloemeken", desc: "Culinair genieten op sterrenniveau in Koewacht (10 min).", url: "https://www.vlasbloemeken.com/" }
+            ]
+        },
+        {
+            title: "Natuur & Actief",
+            icon: Leaf,
+            image: imgNature,
+            items: [
+                { name: "Krekengebied & Canisvliet", desc: "Ontdek de prachtige Zeeuwse kreken en bossen, ideaal voor wandel- en fietstochten.", url: null },
+                { name: "Golfbaan De Woeste Kop", desc: "Prachtige 18-holes golfbaan in Axel met uitdagende holes.", url: "https://www.dewoestekop.nl/" },
+                { name: "Speelbos Axel", desc: "Avontuurlijk bos aan de rand van Axel, leuk voor jong en oud.", url: null }
             ]
         }
     ],
     visitWebsite: "Bezoek website"
   },
   en: {
-    title: "Discover the Surroundings",
-    intro: "Koewacht is uniquely situated on the border of the Netherlands and Belgium. Enjoy the best of both worlds: Zeeland tranquility and Flemish conviviality.",
+    title: "Discover Axel & Surroundings",
+    intro: "Van de Gruiterwonen is located in the charming center of Axel. Enjoy Zeeland hospitality, many restaurants, and beautiful nature in the area.",
     categories: [
         {
-            title: "Nature & Hiking",
-            icon: Leaf,
-            image: imgNature,
-            items: [
-                { name: "Clingse Bossen", desc: "Extensive nature reserve with dunes and water, ideal for long walks (9km).", url: null },
-                { name: "Polders of Koewacht", desc: "Cycle directly from the B&B along the dikes and through the vast landscape.", url: null },
-                { name: "Grote Geule", desc: "Nature area rich in water birds.", url: null }
-            ]
-        },
-        {
-            title: "Culture & Cities",
+            title: "Culture & History",
             icon: Landmark,
             image: imgCulture,
             items: [
-                { name: "Verbeke Foundation", desc: "Impressive private art site (12ha) in Kemzeke (6km). A must-see!", url: "https://verbekefoundation.com/" },
-                { name: "Museum Het Warenhuis", desc: "Regional museum with unique collection (Axel).", url: "https://www.hetwarenhuis.nl/" },
-                { name: "Antwerp & Ghent", desc: "World-class cities within short driving distance.", url: null }
+                { name: "Museum Het Warenhuis", desc: "Be surprised in this unique regional museum in the heart of Axel, within walking distance.", url: "https://www.hetwarenhuis.nl/" },
+                { name: "Water Tower of Axel", desc: "An iconic landmark. Climb the tower for a beautiful view.", url: "https://www.watertorenaxel.nl/" },
+                { name: "Stadsmolen Axel", desc: "Historic corn mill from 1750, still in operation and open for visits.", url: "https://www.molendatabase.nl/nederland/molen.php?nummer=1152" }
             ]
         },
         {
@@ -78,36 +68,36 @@ const content = {
             icon: UtensilsCrossed,
             image: imgFood,
             items: [
-                { name: "'t Vlasbloemeken", desc: "Michelin-starred dining in Koewacht.", url: "https://www.vlasbloemeken.com/" },
-                { name: "Restaurant Bij van Dijk", desc: "Cozy en quality dining.", url: "https://www.restaurant-bijvandijk.nl/" },
-                { name: "De Letter Asperges & Zo", desc: "Specialty restaurant and local shop.", url: "https://www.aspergesenzo.nl/" }
+                { name: "Mia's Restaurant & Lounge", desc: "Mediterranean atmosphere and delicious dishes, perfect for a cozy evening.", url: "https://miasaxel.com/" },
+                { name: "Restaurant à Table", desc: "Refined dining in an atmospheric setting with seasonal dishes.", url: "https://www.restaurantatable.nl/" },
+                { name: "'t Vlasbloemeken", desc: "Michelin-starred dining in Koewacht (10 min).", url: "https://www.vlasbloemeken.com/" }
+            ]
+        },
+        {
+            title: "Nature & Active",
+            icon: Leaf,
+            image: imgNature,
+            items: [
+                { name: "Creek Area & Canisvliet", desc: "Discover the beautiful Zeeland creeks and forests, ideal for walking and cycling tours.", url: null },
+                { name: "Golf Course De Woeste Kop", desc: "Beautiful 18-hole golf course in Axel with challenging holes.", url: "https://www.dewoestekop.nl/" },
+                { name: "Speelbos Axel", desc: "Adventurous forest on the edge of Axel, fun for all ages.", url: null }
             ]
         }
     ],
     visitWebsite: "Visit website"
   },
   de: {
-    title: "Umgebung entdecken",
-    intro: "Koewacht liegt einzigartig an der Grenze zwischen den Niederlanden und Belgien. Genießen Sie das Beste aus beiden Welten.",
+    title: "Axel & Umgebung entdecken",
+    intro: "Van de Gruiterwonen liegt mitten im charmanten Zentrum von Axel. Genießen Sie die seeländische Gastfreundschaft, viele Restaurants und die schöne Natur.",
     categories: [
         {
-            title: "Natur & Wandern",
-            icon: Leaf,
-            image: imgNature,
-            items: [
-                { name: "Clingse Bossen", desc: "Ausgedehntes Naturschutzgebiet, ideal für lange Spaziergänge (9km).", url: null },
-                { name: "Polder von Koewacht", desc: "Radeln Sie direkt vom B&B entlang der Deiche.", url: null },
-                { name: "Grote Geule", desc: "Vogelreiches Naturschutzgebiet.", url: null }
-            ]
-        },
-        {
-            title: "Kultur & Städte",
+            title: "Kultur & Geschichte",
             icon: Landmark,
             image: imgCulture,
             items: [
-                { name: "Verbeke Foundation", desc: "Beeindruckende private Kunststätte (12ha) in Kemzeke (6km).", url: "https://verbekefoundation.com/" },
-                { name: "Museum Het Warenhuis", desc: "Regionalmuseum mit einzigartiger Sammlung (Axel).", url: "https://www.hetwarenhuis.nl/" },
-                { name: "Antwerpen & Gent", desc: "Weltstädte in kurzer Fahrzeit erreichbar.", url: null }
+                { name: "Museum Het Warenhuis", desc: "Lassen Sie sich in diesem einzigartigen Regionalmuseum im Herzen von Axel überraschen.", url: "https://www.hetwarenhuis.nl/" },
+                { name: "Wasserturm von Axel", desc: "Ein ikonisches Wahrzeichen. Besteigen Sie den Turm für eine schöne Aussicht.", url: "https://www.watertorenaxel.nl/" },
+                { name: "Stadsmolen Axel", desc: "Historische Kornmühle aus dem Jahr 1750, noch in Betrieb und zu besichtigen.", url: "https://www.molendatabase.nl/nederland/molen.php?nummer=1152" }
             ]
         },
         {
@@ -115,31 +105,41 @@ const content = {
             icon: UtensilsCrossed,
             image: imgFood,
             items: [
-                { name: "'t Vlasbloemeken", desc: "Sternerestaurant in Koewacht.", url: "https://www.vlasbloemeken.com/" },
-                { name: "Restaurant Bij van Dijk", desc: "Gemütlich und gut essen.", url: "https://www.restaurant-bijvandijk.nl/" },
-                { name: "De Letter Asperges & Zo", desc: "Spezialitätenrestaurant und Hofladen.", url: "https://www.aspergesenzo.nl/" }
+                { name: "Mia's Restaurant & Lounge", desc: "Mediterrane Atmosphäre und köstliche Gerichte, perfekt für einen gemütlichen Abend.", url: "https://miasaxel.com/" },
+                { name: "Restaurant à Table", desc: "Raffiniertes Essen in stimmungsvollem Ambiente mit saisonalen Gerichten.", url: "https://www.restaurantatable.nl/" },
+                { name: "'t Vlasbloemeken", desc: "Sternerestaurant in Koewacht (10 min).", url: "https://www.vlasbloemeken.com/" }
+            ]
+        },
+        {
+            title: "Natur & Aktiv",
+            icon: Leaf,
+            image: imgNature,
+            items: [
+                { name: "Kreekgebiet & Canisvliet", desc: "Entdecken Sie die schönen seeländischen Kreeken und Wälder, ideal für Wander- und Radtouren.", url: null },
+                { name: "Golfplatz De Woeste Kop", desc: "Schöner 18-Loch-Golfplatz in Axel mit anspruchsvollen Löchern.", url: "https://www.dewoestekop.nl/" },
+                { name: "Speelbos Axel", desc: "Abenteuerwald am Rande von Axel, Spaß für Jung und Alt.", url: null }
             ]
         }
     ],
     visitWebsite: "Website besuchen"
-  }
+  },
 };
 
 const c = content[lang as keyof typeof content];
 
 import { Image } from 'astro:assets';
-// Placeholder stock images from existing assets
-import imgNature from '../../assets/images/stock_nature.png'; // High quality polder landscape
-import imgCulture from '../../assets/images/stock_culture.png'; // Art/Culture composition
-import imgFood from '../../assets/images/stock_culinary.png';    // Asparagus dish
+// Images for categories
+import imgNature from '../../assets/images/omgeving_nature.png'; // Generated Creek Landscape
+import imgCulture from '../../assets/images/omgeving_culture.png'; // Generated Watertoren
+import imgFood from '../../assets/images/omgeving_culinary.png';    // Generated Fine Dining
 ---
 
-<Layout title={`B&B 't Stippie | ${c.title}`}>
-  <div class="pt-24 md:pt-36 pb-12 bg-brand-light">
+<Layout title={`B&B Van de Gruiterwonen | ${c.title}`}>
+  <div class="pt-36 md:pt-36 pb-12 bg-brand-light">
     <div class="container mx-auto px-6">
        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h1 class="text-4xl md:text-5xl font-heading font-black text-brand-green mb-6 animate-slide-up">{c.title}</h1>
-          <p class="text-lg text-brand-dark/70 leading-relaxed animate-slide-up delay-100">{c.intro}</p>
+          <h1 class="text-4xl md:text-5xl font-heading font-black text-brand-brown mb-6 animate-slide-up">{c.title}</h1>
+          <p class="text-lg text-brand-taupe/70 leading-relaxed animate-slide-up delay-100">{c.intro}</p>
        </div>
 
        <div class="space-y-20">
@@ -148,7 +148,7 @@ import imgFood from '../../assets/images/stock_culinary.png';    // Asparagus di
                 
                 <!-- Image Side -->
                 <div class="w-full md:w-1/2 relative group">
-                    <div class="absolute inset-0 bg-brand-green/20 rounded-[40px] transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+                    <div class="absolute inset-0 bg-brand-gold/20 rounded-[40px] transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
                     <!-- Fix: added isolate and z-0 to force stacking context, ensuring overflow hidden works on all browsers -->
                     <div class="rounded-[40px] overflow-hidden shadow-2xl h-[400px] relative isolate z-0">
                         <Image src={cat.image} alt={cat.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" quality="high" />
@@ -160,28 +160,28 @@ import imgFood from '../../assets/images/stock_culinary.png';    // Asparagus di
                 <!-- Content Side -->
                 <div class="w-full md:w-1/2 space-y-8">
                      <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-brand-green text-white rounded-2xl flex items-center justify-center shadow-lg transform -rotate-3">
+                        <div class="w-14 h-14 bg-brand-gold text-white rounded-2xl flex items-center justify-center shadow-lg transform -rotate-3">
                             <cat.icon className="w-7 h-7" />
                         </div>
-                        <h2 class="text-3xl font-heading font-bold text-brand-dark">{cat.title}</h2>
+                        <h2 class="text-3xl font-heading font-bold text-brand-brown">{cat.title}</h2>
                      </div>
 
                      <ul class="space-y-6">
                         {cat.items.map(item => (
-                            <li class="bg-white p-6 rounded-2xl shadow-sm border border-brand-clay/20 hover:shadow-md transition-shadow">
+                            <li class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/20 hover:shadow-md transition-shadow">
                                 <div class="flex flex-col">
-                                    <h4 class="font-bold text-brand-green text-lg flex items-center gap-2">
+                                    <h4 class="font-bold text-brand-brown text-lg flex items-center gap-2">
                                         {item.name}
                                         {item.url && (
-                                            <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-green transition-colors">
+                                            <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-brand-taupe/40 hover:text-brand-gold transition-colors">
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                             </a>
                                         )}
                                     </h4>
-                                    <p class="text-brand-dark/70 mt-2 leading-relaxed">{item.desc}</p>
+                                    <p class="text-brand-taupe/70 mt-2 leading-relaxed">{item.desc}</p>
                                     
                                     {item.url && (
-                                        <a href={item.url} target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-sm font-bold text-brand-green hover:underline">
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-sm font-bold text-brand-gold hover:underline">
                                             {c.visitWebsite} &rarr;
                                         </a>
                                     )}
@@ -197,7 +197,7 @@ import imgFood from '../../assets/images/stock_culinary.png';    // Asparagus di
        <!-- Interactive Map Placeholder (iframe) -->
        <div class="mt-24 rounded-[40px] overflow-hidden shadow-2xl h-[500px] bg-gray-100 relative transition-all duration-1000">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.456673759904!2d3.975431315750849!3d51.22234097958925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c38c62c7e0c8b3%3A0x400994f7966f9b88!2sTragel%201%2C%204576%20EA%20Koewacht!5e0!3m2!1snl!2snl!4v1629898765432!5m2!1snl!2snl" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.456673759904!2d3.910000!3d51.265000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAxel!5e0!3m2!1snl!2snl!4v1629898765432!5m2!1snl!2snl" 
             width="100%" 
             height="100%" 
             style="border:0;" 

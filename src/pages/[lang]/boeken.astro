@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { languages } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { Image } from 'astro:assets';
-import bookingImage from '../../assets/images/t_stippie_10.jpg'; // Nice interior/breakfast shot
+import bookingImage from '../../assets/images/vdg/vdg_31.webp'; // Nice interior/breakfast shot
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -21,80 +21,78 @@ const content = {
 const c = content[lang as keyof typeof content];
 ---
 
-<Layout title={`B&B 't Stippie | ${t('nav.booking')}`}>
-  <div class="pt-24 md:pt-36 pb-12 bg-brand-light min-h-screen">
+<Layout title={`B&B Van de Gruiterwonen | ${t('nav.booking')}`}>
+  <div class="pt-36 md:pt-36 pb-12 bg-brand-light min-h-screen">
     <div class="container mx-auto px-6">
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h1 class="text-4xl md:text-5xl font-heading font-black text-brand-green mb-6 animate-slide-up">{c.title}</h1>
-            <p class="text-lg text-brand-dark/70 leading-relaxed animate-slide-up delay-100">{c.intro}</p>
+            <h1 class="text-4xl md:text-5xl font-heading font-black text-brand-brown mb-6 animate-slide-up">{c.title}</h1>
+            <p class="text-lg text-brand-taupe/70 leading-relaxed animate-slide-up delay-100">{c.intro}</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
             <!-- Booking Form -->
-            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-brand-clay/20 animate-slide-up delay-200">
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-brand-gold/20 animate-slide-up delay-200">
                 <form name="booking" method="POST" data-netlify="true" class="space-y-6">
                     
                     <!-- Dates -->
                     <div class="grid grid-cols-2 gap-6">
                         <div class="space-y-2">
-                            <label for="checkin" class="block text-sm font-bold text-brand-dark">{t('form.checkin')}</label>
-                            <input type="date" id="checkin" name="checkin" required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors" />
+                            <label for="checkin" class="block text-sm font-bold text-brand-taupe">{t('form.checkin')}</label>
+                            <input type="date" id="checkin" name="checkin" required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold/50 transition-colors text-brand-taupe" />
                         </div>
                         <div class="space-y-2">
-                            <label for="checkout" class="block text-sm font-bold text-brand-dark">{t('form.checkout')}</label>
-                            <input type="date" id="checkout" name="checkout" required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors" />
+                            <label for="checkout" class="block text-sm font-bold text-brand-taupe">{t('form.checkout')}</label>
+                            <input type="date" id="checkout" name="checkout" required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold/50 transition-colors text-brand-taupe" />
                         </div>
                     </div>
 
                     <!-- Guests -->
-                    <div class="space-y-2">
-                         <label for="guests" class="block text-sm font-bold text-brand-dark">{t('form.guests')}</label>
-                         <select id="guests" name="guests" class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors">
-                             <option value="1">1 Persoon</option>
-                             <option value="2" selected>2 Personen</option>
-                             <option value="3">3 Personen</option>
-                             <option value="4">4 Personen</option>
-                         </select>
-                    </div>
+                     <div class="space-y-2">
+                          <label for="guests" class="block text-sm font-bold text-brand-taupe">{t('form.guests')}</label>
+                          <select id="guests" name="guests" class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold/50 transition-colors text-brand-taupe">
+                              <option value="1">{t('booking.option.1person')}</option>
+                              <option value="2" selected>{t('booking.option.2persons')}</option>
+                          </select>
+                     </div>
 
-                    <!-- Extras -->
-                    <div class="bg-brand-green/5 p-6 rounded-xl border border-brand-green/10">
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                             <input type="checkbox" name="breakfast" value="yes" class="w-5 h-5 text-brand-green rounded border-gray-300 focus:ring-brand-green" />
-                             <span class="text-brand-dark font-medium group-hover:text-brand-green transition-colors">{t('form.extra.breakfast')}</span>
-                        </label>
-                    </div>
+                     <!-- Extras -->
+                     <div class="bg-brand-gold/5 p-6 rounded-xl border border-brand-gold/10">
+                         <label class="flex items-center gap-3 cursor-pointer group">
+                              <input type="checkbox" name="breakfast" value="yes" class="w-5 h-5 text-brand-gold rounded border-brand-taupe/20 focus:ring-brand-gold" checked disabled />
+                              <span class="text-brand-taupe font-medium">{t('form.extra.breakfast')} (Inclusief)</span>
+                         </label>
+                     </div>
 
-                    <!-- Personal Details -->
-                    <div class="space-y-4">
-                        <input type="text" name="name" placeholder={t('form.name')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors" />
-                        <input type="email" name="email" placeholder={t('form.email')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors" />
-                        <textarea name="remarks" rows="3" placeholder={t('form.remarks')} class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-green focus:bg-white focus:ring-0 transition-colors"></textarea>
-                    </div>
+                     <!-- Personal Details -->
+                     <div class="space-y-4">
+                         <input type="text" name="name" placeholder={t('form.name')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold/50 transition-colors placeholder:text-brand-taupe/40 text-brand-taupe" />
+                         <input type="email" name="email" placeholder={t('form.email')} required class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold/50 transition-colors placeholder:text-brand-taupe/40 text-brand-taupe" />
+                         <textarea name="remarks" rows="3" placeholder={t('form.remarks')} class="w-full px-4 py-3 rounded-lg bg-brand-light border-transparent focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold/50 transition-colors placeholder:text-brand-taupe/40 text-brand-taupe"></textarea>
+                     </div>
 
-                    <button type="submit" class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-full shadow-lg hover:bg-brand-dark hover:scale-[1.02] active:scale-95 transition-all duration-300">
-                        {t('form.send')}
-                    </button>
-                </form>
-            </div>
+                     <button type="submit" class="w-full bg-brand-gold text-white font-bold text-lg py-4 rounded-full shadow-lg hover:bg-brand-brown hover:scale-[1.02] active:scale-95 transition-all duration-300">
+                         {t('form.send')}
+                     </button>
+                 </form>
+             </div>
 
-            <!-- Side Content (Image / Info) -->
-            <div class="space-y-8 animate-slide-up delay-300 hidden lg:block">
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
-                    <Image src={bookingImage} alt="Delicious Breakfast" class="w-full h-full object-cover" quality="high" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                        <p class="text-white font-heading font-bold text-2xl">Start de dag goed.</p>
-                    </div>
-                </div>
+             <!-- Side Content (Image / Info) -->
+             <div class="space-y-8 animate-slide-up delay-300 hidden lg:block">
+                 <div class="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+                     <Image src={bookingImage} alt="Delicious Breakfast" class="w-full h-full object-cover" quality="high" />
+                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                         <p class="text-white font-heading font-bold text-2xl">{t('booking.startDay')}</p>
+                     </div>
+                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-brand-clay/20">
-                    <h3 class="text-xl font-bold text-brand-green mb-4">Waarom rechtstreeks boeken?</h3>
-                    <ul class="space-y-3 text-brand-dark/80">
-                        <li class="flex items-center gap-2">✓ Beste prijsgarantie</li>
-                        <li class="flex items-center gap-2">✓ Direct contact met de eigenaren</li>
-                        <li class="flex items-center gap-2">✓ Flexibele voorwaarden</li>
-                    </ul>
+                 <div class="bg-white p-8 rounded-3xl shadow-lg border border-brand-gold/20">
+                     <h3 class="text-xl font-bold text-brand-brown mb-4">{t('booking.whyDirect')}</h3>
+                     <ul class="space-y-3 text-brand-taupe/80">
+                         <li class="flex items-center gap-2">✓ {t('booking.bestPrice')}</li>
+                         <li class="flex items-center gap-2">✓ {t('booking.contactOwners')}</li>
+                         <li class="flex items-center gap-2">✓ {t('booking.flexible')}</li>
+                     </ul>
                 </div>
             </div>
         </div>

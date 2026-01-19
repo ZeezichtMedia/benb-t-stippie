@@ -14,60 +14,59 @@ const t = useTranslations(lang as keyof typeof languages);
 
 const content = {
   nl: {
-    heroTitle: "Rust & Ruimte",
-    heroSubtitle: "Ontsnap aan de drukte in het hart van de Zeeuwse polder.",
-    introTitle: "Welkom bij 't Stippie",
-    introText: "Geniet van een onbezorgd verblijf in onze sfeervolle B&B. Gelegen aan de grens met België, bieden wij de perfecte uitvalsbasis voor natuurliefhebbers, fietsers en rustzoekers.",
+    heroTitle: "B&B Van de Gruiterwonen",
+    heroSubtitle: "Mediterrane luxe in hartje Axel.",
+    introTitle: "Uw thuis weg van huis",
+    introText: "Van de Gruiterswonen biedt een unieke, comfortabele ervaring met persoonlijke service in een rustige omgeving, perfect voor een ontspannen uitje of een romantisch weekend.",
     features: [
-        { title: "Comfortabel Slapen", desc: "Ruim tweepersoonsbed & slaapbank", icon: BedDouble },
-        { title: "Vers Ontbijt", desc: "Met streekproducten (optioneel)", icon: Coffee },
-        { title: "Gratis WiFi", desc: "Snel internet & eigen werkplek", icon: Wifi },
-        { title: "Toerisme", desc: "Nabij Gent, Antwerpen & Strand", icon: Map },
+        { title: "Ruime Suites", desc: "Met eigen badkamer en keuken", icon: BedDouble },
+        { title: "Luxe Ontbijt", desc: "Inclusief uitgebreid streekontbijt", icon: Coffee },
+        { title: "Faciliteiten", desc: "Gratis WiFi & Privéterras", icon: Wifi },
+        { title: "Locatie", desc: "Centrum van Axel, nabij restaurants", icon: Map },
     ],
-    imageFeatureTitle: "Rust & Comfort",
-    ctaTitle: "Klaar om te ontspannen?",
-    ctaText: "Boek direct jouw verblijf en geniet van de Zeeuwse gastvrijheid en rust in de polder."
+    imageFeatureTitle: "Inclusief Luxe Ontbijt",
+    ctaTitle: "Laat je in de watten leggen",
+    ctaText: "Reserveer nu en ervaar de gezelligheid van ons bed and breakfast met uitstekende service en comfort."
   },
   en: {
-    heroTitle: "Peace & Space",
-    heroSubtitle: "Escape the hustle in the heart of the Zeeland polders.",
-    introTitle: "Welcome to 't Stippie",
-    introText: "Enjoy a carefree stay in our atmospheric B&B. Located on the border with Belgium, we offer the perfect base for nature lovers, cyclists, and peace seekers.",
+    heroTitle: "B&B Van de Gruiterwonen",
+    heroSubtitle: "Mediterranean luxury in the heart of Axel.",
+    introTitle: "Your home away from home",
+    introText: "Van de Gruiterswonen offers a unique, comfortable experience with personal service in a quiet environment, perfect for a relaxing getaway or a romantic weekend.",
     features: [
-        { title: "Comfortable Sleep", desc: "Spacious double bed & sofa bed", icon: BedDouble },
-        { title: "Fresh Breakfast", desc: "With local products (optional)", icon: Coffee },
-        { title: "Free WiFi", desc: "Fast internet & workspace", icon: Wifi },
-        { title: "Tourism", desc: "Near Ghent, Antwerp & Beach", icon: Map },
+        { title: "Spacious Suites", desc: "With private bathroom and kitchen", icon: BedDouble },
+        { title: "Luxury Breakfast", desc: "Including extensive local breakfast", icon: Coffee },
+        { title: "Amenities", desc: "Free WiFi & Private Terrace", icon: Wifi },
+        { title: "Location", desc: "Center of Axel, near restaurants", icon: Map },
     ],
-    imageFeatureTitle: "Peace & Comfort",
-    ctaTitle: "Ready to Relax?",
-    ctaText: "Book your stay directly and enjoy Zeeland hospitality and peace in the polder."
+    imageFeatureTitle: "Including Luxury Breakfast",
+    ctaTitle: "Let us pamper you",
+    ctaText: "Book now and experience the coziness of our bed and breakfast with excellent service and comfort."
   },
   de: {
-    heroTitle: "Ruhe & Raum",
-    heroSubtitle: "Entfliehen Sie der Hektik im Herzen der seeländischen Polder.",
-    introTitle: "Willkommen bei 't Stippie",
-    introText: "Genießen Sie einen sorglosen Aufenthalt in unserem stimmungsvollen B&B. An der Grenze zu Belgien gelegen, bieten wir den perfekten Ausgangspunkt für Naturliebhaber und Radfahrer.",
+    heroTitle: "B&B Van de Gruiterwonen",
+    heroSubtitle: "Mediterraner Luxus im Herzen von Axel.",
+    introTitle: "Ihr Zuhause fern von Zuhause",
+    introText: "Van de Gruiterswonen bietet ein einzigartiges, komfortables Erlebnis mit persönlichem Service in einer ruhigen Umgebung, perfekt für einen entspannten Ausflug oder ein romantisches Wochenende.",
     features: [
-
-        { title: "Komfortabel Schlafen", desc: "Geräumiges Doppelbett & Schlafsofa", icon: BedDouble },
-        { title: "Frisches Frühstück", desc: "Mit lokalen Produkten (optional)", icon: Coffee },
-        { title: "Gratis WiFi", desc: "Schnelles Internet & Arbeitsplatz", icon: Wifi },
-        { title: "Tourismus", desc: "Nahe Gent, Antwerpen & Strand", icon: Map },
+        { title: "Geräumige Suites", desc: "Mit eigenem Bad und Küche", icon: BedDouble },
+        { title: "Luxus-Frühstück", desc: "Inklusive reichhaltigem regionalem Frühstück", icon: Coffee },
+        { title: "Ausstattung", desc: "Gratis WiFi & Private Terrasse", icon: Wifi },
+        { title: "Location", desc: "Zentrum von Axel, nahe Restaurants", icon: Map },
     ],
-    imageFeatureTitle: "Ruhe & Komfort",
-    ctaTitle: "Bereit zum Entspannen?",
-    ctaText: "Buchen Sie direkt Ihren Aufenthalt und genießen Sie die seeländische Gastfreundschaft."
+    imageFeatureTitle: "Inklusive Luxus-Frühstück",
+    ctaTitle: "Lassen Sie sich verwöhnen",
+    ctaText: "Buchen Sie jetzt und erleben Sie die Gemütlichkeit unseres Bed & Breakfast mit exzellentem Service und Komfort."
   }
 };
 
 const c = content[lang as keyof typeof content];
 
-import introImage from '../../assets/images/t_stippie_05.jpg'; // Changed to 5th image based on request
+import introImage from '../../assets/images/vdg/vdg_13.webp'; // Breakfast/Interior detail
 import { Image } from 'astro:assets';
 ---
 
-<Layout title={`B&B 't Stippie | ${c.heroTitle}`}>
+<Layout title={`${c.heroTitle} | ${c.heroSubtitle}`}>
   <Hero 
     title={c.heroTitle}
     subtitle={c.heroSubtitle}
@@ -79,8 +78,8 @@ import { Image } from 'astro:assets';
   <section class="py-24 bg-brand-light relative overflow-hidden">
     <div class="container mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-20 animate-fade-in">
-        <h2 class="text-5xl md:text-7xl font-heading font-black text-brand-green mb-6">{c.introTitle}</h2>
-        <p class="text-xl text-brand-dark/70 leading-relaxed font-light">
+        <h2 class="text-5xl md:text-7xl font-heading font-black text-brand-brown mb-6">{c.introTitle}</h2>
+        <p class="text-xl text-brand-taupe/80 leading-relaxed font-light">
           {c.introText}
         </p>
       </div>
@@ -90,19 +89,19 @@ import { Image } from 'astro:assets';
           <div class="md:col-span-2 lg:col-span-2 row-span-2 relative group overflow-hidden rounded-3xl shadow-2xl animate-slide-up delay-100">
                 <Image src={introImage} alt="Relaxing Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" quality="high" />
              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                <h3 class="text-3xl font-bold text-white">{c.imageFeatureTitle}</h3>
+                <h3 class="text-3xl font-bold text-white font-heading">{c.imageFeatureTitle}</h3>
              </div>
           </div>
 
           <!-- Feature Cards -->
           {c.features.map((f, i) => (
              <div class={`p-8 bg-white rounded-3xl shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-2 animate-slide-up delay-${(i+2)*100} ${i === 0 || i === 3 ? 'md:col-span-1' : 'md:col-span-1'}`}>
-                <div class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-colors">
+                <div class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-colors">
                     <f.icon className="w-7 h-7" />
                 </div>
                 <div>
-                    <h3 class="font-bold text-brand-dark text-xl mb-2">{f.title}</h3>
-                    <p class="text-sm text-brand-dark/60 leading-relaxed">{f.desc}</p>
+                    <h3 class="font-bold text-brand-brown text-xl mb-2 font-heading">{f.title}</h3>
+                    <p class="text-sm text-brand-taupe/70 leading-relaxed">{f.desc}</p>
                 </div>
              </div>
           ))}
@@ -114,18 +113,18 @@ import { Image } from 'astro:assets';
   <!-- CTA Section with Image Background & Glass Card -->
   <section class="relative py-32 overflow-hidden mx-4 md:mx-0 my-12 rounded-[50px] md:rounded-none">
     <div class="absolute inset-0 z-0">
-        <Image src={import('../../assets/images/t_stippie_02.jpg')} alt="Scenic View" class="w-full h-full object-cover" quality="high" />
+        <Image src={import('../../assets/images/vdg/vdg_11.webp')} alt="Scenic View" class="w-full h-full object-cover" quality="high" />
         <!-- Subtle dark gradient only at bottom for depth, not affecting text readability which is now in card -->
         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
     </div>
     
     <div class="container mx-auto px-6 relative z-10 flex justify-center items-center">
-        <div class="bg-white/90 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl max-w-4xl w-full text-center border border-white/50 animate-slide-up hover:scale-[1.01] transition-transform duration-500">
-            <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 text-brand-green">{c.ctaTitle}</h2>
-            <p class="text-lg md:text-xl text-brand-dark/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <div class="bg-brand-cream/90 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl max-w-4xl w-full text-center border border-white/50 animate-slide-up hover:scale-[1.01] transition-transform duration-500">
+            <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 text-brand-brown">{c.ctaTitle}</h2>
+            <p class="text-lg md:text-xl text-brand-taupe/80 mb-10 max-w-2xl mx-auto leading-relaxed">
                 {c.ctaText}
             </p>
-            <a href={getRelativeLocaleUrl(lang as string, 'boeken')} class="inline-flex items-center gap-3 bg-brand-green text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-brand-dark transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 group">
+            <a href={getRelativeLocaleUrl(lang as string, 'boeken')} class="inline-flex items-center gap-3 bg-brand-gold text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-brand-brown transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 group">
                 {t('btn.book')}
                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </a>
